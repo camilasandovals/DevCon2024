@@ -1,17 +1,28 @@
 # CartApp 🛒
 
-## -Dependencies
+To run the app, follow these steps:
 
-Add the following packages to your `package.json` file:
+1. Go to `https://snack.expo.dev/`
+2. Add the following packages to your `package.json` file:
 
 - `expo-camera`: `~14.1.2`
 - `expo-file-system`: `~16.0.9`
 
+3. Create the `post.js` file into and paste the code from `post.js` into the editor
+4. Create the `AppStyles.js` file into and paste the code from `AppStyles.js` into the editor
+5. Paste the code from `App.js` into the editor
+6. Run the app on your device
+
 ## -API Setup
 
-The CartApp utilizes FastAPI and OpenAI's GPT-4 Turbo model. Here's how to set up the API:
+The CartApp utilizes FastAPI and OpenAI's GPT-4 Turbo model. 
 
-### Import Required Modules
+Here's how to set up the API:
+
+1. Go to `https://www.openai.com/` and create an account
+2. Create an API key
+3. Create a FastAPI server in this case we used `https://replit.com/`
+4. Install the required packages
 
 pip install the following packages:
 
@@ -21,7 +32,6 @@ pip install base64
 ```
 
 ### Create a FastAPI Server
-
 Create a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
 
 ```python
@@ -84,6 +94,3 @@ The price shouldn't be the most updated, just give an estimate from stores like 
 Return the food and the price in the format of a string separated with an equal sign, like this: Oldfashioned Oatmeal=3.99
 If it's not food or you can't identify the price just return 'unknown' for both price and food.
 """
-
-
-#
