@@ -37,10 +37,7 @@ export default function App() {
 
 
   const ConfirmationModal = () => (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={modalConfig.visible}
+    <Modal animationType="slide" transparent={true} visible={modalConfig.visible}
       onRequestClose={() =>
         setModalConfig((prev) => ({ ...prev, visible: false }))
       }
@@ -49,19 +46,13 @@ export default function App() {
         <View style={styles.modalView}>
           {modalConfig.content}
           <View style={styles.buttonContainer}>
-            <MaterialIcons
-              name="cancel"
-              size={60}
-              color="#f77070"
+            <MaterialIcons name="cancel" size={60} color="#f77070"
               onPress={() =>
                 setModalConfig((prev) => ({ ...prev, visible: false }))
               }
             />
-            <Entypo
-              name="circle-with-plus"
-              size={60}
-              color="#8dc88d"
-              onPress={() => {
+            <Entypo name="circle-with-plus" size={60} color="#8dc88d" 
+            onPress={() => {
                 modalConfig.onConfirm();
                 setModalConfig((prev) => ({ ...prev, visible: false }));
               }}
@@ -175,7 +166,8 @@ export default function App() {
       </Camera>
     );
   }
-
+  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <SafeAreaView style={styles.container}>
         {loading ? (
@@ -193,10 +185,13 @@ export default function App() {
         ) : (
           <Text style={styles.emptyText}>No Items Yet</Text>
         )}
+        {/* <TouchableOpacity style={styles.iconButton} onPress={() => setShowCamera(true)}>
+          <Feather name="camera" size={35} color="white" />
+        </TouchableOpacity> */}
     </SafeAreaView>
   );
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -282,7 +277,7 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 18,
-    color: "lightgray",
+    color: "gray",
     textAlign: "center",
     margin: 30,
   },
