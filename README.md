@@ -1,17 +1,28 @@
-# CartApp
+# CartApp, a React Native App for Scanning and Identifying Food Items
 
-## Dependencies
+## -Dependencies
 
 Add the following packages to your `package.json` file:
 
-- `expo-camera`: Version `~14.1.2`
-- `expo-file-system`: Version `~16.0.9`
+- `expo-camera`: `~14.1.2`
+- `expo-file-system`: `~16.0.9`
 
-## API Setup
+## -API Setup
 
 The CartApp utilizes FastAPI and OpenAI's GPT-4 Turbo model. Here's how to set up the API:
 
 ### Import Required Modules
+
+pip install the following packages:
+
+```bash
+pip install openai
+pip install base64
+```
+
+### Create a FastAPI Server
+
+Create a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
 
 ```python
 
