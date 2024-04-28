@@ -1,4 +1,4 @@
-# CartApp, a React Native App for Scanning and Identifying Food Items
+# CartApp 🛒
 
 ## -Dependencies
 
