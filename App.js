@@ -7,11 +7,11 @@ import { Feather, FontAwesome6, AntDesign, MaterialIcons, Entypo } from "@expo/v
 export default function App() {
 
   const initialFoods = [
-    { food: "Oranges", price: "0.50" },
-    { food: "Apples", price: "0.30" },
-    { food: "Bananas", price: "0.25" },
-    { food: "Berries", price: "1.00" },
-    { food: "Peaches", price: "0.75" },
+    // { food: "Oranges", price: "0.50" },
+    // { food: "Apples", price: "0.30" },
+    // { food: "Bananas", price: "0.25" },
+    // { food: "Berries", price: "1.00" },
+    // { food: "Peaches", price: "0.75" },
   ];
 
   const calculateInitialTotal = () => {
@@ -193,7 +193,6 @@ export default function App() {
         ) : (
           <Text style={styles.emptyText}>No Items Yet</Text>
         )}
-        <ConfirmationModal />
     </SafeAreaView>
   );
 }
