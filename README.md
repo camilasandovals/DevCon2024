@@ -105,4 +105,5 @@ If it's not food or you can't identify the price just return 'unknown' for both 
 ```
 
 ### Documentation:
+
 https://platform.openai.com/docs/guides/vision

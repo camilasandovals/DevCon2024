@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
-import { Text, View, TouchableOpacity, SafeAreaView, Image, Button, Modal, ScrollView, ActivityIndicator } from "react-native";
+import { Text, View, TouchableOpacity, SafeAreaView, Image, Button, Modal, ActivityIndicator, ScrollView } from "react-native";
 import { Camera, CameraType } from "expo-camera";
-import { Feather, FontAwesome6, AntDesign, MaterialIcons, Entypo } from "@expo/vector-icons";
+import { Feather, FontAwesome6, AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { uploadPicture } from "./post.js";
 import { styles } from './AppStyles.js'; 
 
@@ -11,8 +11,6 @@ export default function App() {
     // { food: "Oranges", price: "0.50" },
     // { food: "Apples", price: "0.30" },
     // { food: "Bananas", price: "0.25" },
-    // { food: "Berries", price: "1.00" },
-    // { food: "Peaches", price: "0.75" },
   ];
 
   const calculateInitialTotal = () => {
@@ -36,7 +34,6 @@ export default function App() {
     onConfirm: () => {},
   });
 
-
   const ConfirmationModal = () => (
     <Modal animationType="slide" transparent={true} visible={modalConfig.visible}
       onRequestClose={() =>
@@ -52,7 +49,7 @@ export default function App() {
                 setModalConfig((prev) => ({ ...prev, visible: false }))
               }
             />
-            <Entypo name="circle-with-plus" size={60} color="#8dc88d" 
+            <AntDesign name="checkcircle" size={55} color="#8dc88d" 
             onPress={() => {
                 modalConfig.onConfirm();
                 setModalConfig((prev) => ({ ...prev, visible: false }));
@@ -63,6 +60,28 @@ export default function App() {
       </View>
     </Modal>
   );
+
+  const showAddConfirmation = (result, uri) => {
+    setModalConfig({
+      visible: true,
+      content: (
+        <>
+          <Text style={styles.modalText}>
+            {result.food} average price is ${result.price}
+          </Text>
+          <Image source={{ uri: uri }} style={styles.previewImage} />
+        </>
+      ),
+      onConfirm: () => {
+        const newItem = { ...result, imageUri: uri };
+        const newFoodList = [...foodList, newItem];
+        setFoodList(newFoodList);
+        const additionalPrice = Number(result.price);
+        const newTotal = parseFloat(shoppingTotal) + additionalPrice;
+        setShoppingTotal(newTotal.toFixed(2));
+      }
+    });
+  };
 
   const showDeleteConfirmation = (index) => {
     setModalConfig({
@@ -79,21 +98,6 @@ export default function App() {
         setFoodList(newFoodList);
         const updatedTotal = shoppingTotal - parseFloat(itemToRemove.price);
         setShoppingTotal(updatedTotal.toFixed(2));
-      }
-    });
-  };
-
-  const showResetConfirmation = () => {
-    setModalConfig({
-      visible: true,
-      content: (
-        <Text style={styles.modalText}>
-          Are you sure you want to delete the list?
-        </Text>
-      ),
-      onConfirm: () => {
-        setShoppingTotal(0.0);
-        setFoodList([]);
       }
     });
   };
@@ -117,28 +121,6 @@ export default function App() {
         setLoading(false);
       }
     }
-  };
-
-  const showAddConfirmation = (result, uri) => {
-    setModalConfig({
-      visible: true,
-      content: (
-        <>
-          <Text style={styles.modalText}>
-            {result.food} average price is ${result.price}
-          </Text>
-          <Image source={{ uri: uri }} style={styles.previewImage} />
-        </>
-      ),
-      onConfirm: () => {
-        const newItem = { ...result, imageUri: uri };
-        const newFoodList = [...foodList, newItem];
-        setFoodList(newFoodList);
-        const additionalPrice = Number(result.price);
-        const newTotal = parseFloat(shoppingTotal) + additionalPrice;
-        setShoppingTotal(newTotal.toFixed(2));
-      }
-    });
   };
 
   if (showCamera) {
@@ -185,6 +167,7 @@ export default function App() {
         ) : (
           <Text style={styles.emptyText}>No Items Yet</Text>
         )}
+        
     </SafeAreaView>
   );
 }

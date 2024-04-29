@@ -3,7 +3,6 @@ import { Platform } from "react-native";
 
 export const uploadPicture = async (imageUri) => {
   try {
-    const fileInfo = await FileSystem.getInfoAsync(imageUri);
     const fileBlob = await FileSystem.readAsStringAsync(imageUri, {
       encoding: FileSystem.EncodingType.Base64,
     });
@@ -27,7 +26,6 @@ export const uploadPicture = async (imageUri) => {
       }
     );
     const data = await response.json();
-    console.log("response", data);
     return data;
   } catch (error) {
     console.error("API call failed:", error);
