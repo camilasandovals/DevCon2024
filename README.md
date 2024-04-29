@@ -5,8 +5,10 @@ To run the app, follow these steps:
 1. Go to `https://snack.expo.dev/`
 2. Add the following packages to your `package.json` file:
 
-`expo-camera`: `~14.1.2`,
-`expo-file-system`: `~16.0.9`
+```json
+"expo-camera": "~14.1.2",
+"expo-file-system": "~16.0.9"
+```
 
 3. Create the `post.js` file in snack and paste the code from `post.js` into the editor
 4. Create the `AppStyles.js` file in snack and paste the code from `AppStyles.js` into the editor
