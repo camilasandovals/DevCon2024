@@ -10,6 +10,7 @@ export default function App() {
   const initialFoods = [
     // { food: "Oranges", price: "0.50" },
     // { food: "Bananas", price: "0.25" },
+    // { food: "Milk", price: "3.00" },
   ];
 
   const calculateInitialTotal = () => {
