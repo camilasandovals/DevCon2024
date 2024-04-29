@@ -22,8 +22,8 @@ The CartApp utilizes FastAPI and OpenAI's GPT-4 Turbo model.
 Here's how to set up the API:
 
 1. Go to `https://platform.openai.com/` and login or create an account
-2. Create an API key
-3. Inside of settings add the billing information
+2. Inside of settings add the billing information
+3. Create an API key
 4. Go to `https://replit.com/` and create a replit account
 5. Click on the `+ Create Repl` button to create a new repl
 6. Select the `FastAPI` template
@@ -48,6 +48,9 @@ import base64
 app = FastAPI()
 client = OpenAI(api_key="REPLACE WITH YOUR API KEY")
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 @app.post("/")
 async def get_openai_response_post(image: UploadFile = File(...)):
