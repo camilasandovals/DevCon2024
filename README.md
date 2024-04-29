@@ -50,7 +50,7 @@ client = OpenAI(api_key="REPLACE WITH YOUR API KEY")
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello": "DevCon!"}
 
 @app.post("/")
 async def get_openai_response_post(image: UploadFile = File(...)):
