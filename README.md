@@ -5,11 +5,11 @@ To run the app, follow these steps:
 1. Go to `https://snack.expo.dev/`
 2. Add the following packages to your `package.json` file:
 
-- `expo-camera`: `~14.1.2`
-- `expo-file-system`: `~16.0.9`
+`expo-camera`: `~14.1.2`,
+`expo-file-system`: `~16.0.9`
 
-3. Create the `post.js` file into and paste the code from `post.js` into the editor
-4. Create the `AppStyles.js` file into and paste the code from `AppStyles.js` into the editor
+3. Create the `post.js` file in snack and paste the code from `post.js` into the editor
+4. Create the `AppStyles.js` file in snack and paste the code from `AppStyles.js` into the editor
 5. Paste the code from `App.js` into the editor
 6. Run the app on your device
 
@@ -19,16 +19,19 @@ The CartApp utilizes FastAPI and OpenAI's GPT-4 Turbo model.
 
 Here's how to set up the API:
 
-1. Go to `https://www.openai.com/` and create an account
+1. Go to `https://platform.openai.com/` and login or create an account
 2. Create an API key
-3. Create a FastAPI server in this case we used `https://replit.com/`
-4. Install the required packages
+3. Inside of settings add the billing information
+4. Go to `https://replit.com/` and create a replit account
+5. Click on the `+ Create Repl` button to create a new repl
+6. Select the `FastAPI` template
+7. Install the required packages
 
 pip install the following packages:
 
 ```bash
 pip install openai
-pip install base64
+pip install python-multipart
 ```
 
 ### Create a FastAPI Server
