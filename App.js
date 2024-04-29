@@ -9,7 +9,6 @@ export default function App() {
 
   const initialFoods = [
     // { food: "Oranges", price: "0.50" },
-    // { food: "Apples", price: "0.30" },
     // { food: "Bananas", price: "0.25" },
   ];
 
@@ -167,7 +166,6 @@ export default function App() {
         ) : (
           <Text style={styles.emptyText}>No Items Yet</Text>
         )}
-        
     </SafeAreaView>
   );
 }
