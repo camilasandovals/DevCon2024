@@ -127,7 +127,7 @@ export default function App() {
     if (!permission?.granted) {
       return (
         <View style={styles.container}>
-          <Text style={styles.text}>
+          <Text>
             We need your permission to show the camera
           </Text>
           <Button onPress={requestPermission} title="Grant Permission" />

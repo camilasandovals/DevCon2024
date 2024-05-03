@@ -7,10 +7,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     backgroundColor: "#dfe4ea",
   },
-  text: {
-    fontSize: 23,
-    color: "#35374B",
-  },
   cartApp: {
     fontSize: 35,
     alignSelf: "flex-start",
@@ -40,7 +36,7 @@ export const styles = StyleSheet.create({
   foodListContainer: {
     position: "relative",
     flex: 1,
-    width: 350,
+    width: 380,
     backgroundColor: "white",
     paddingVertical: 10,
     paddingHorizontal: 35,
@@ -60,13 +56,6 @@ export const styles = StyleSheet.create({
     fontWeight: 500,
     marginVertical: 20,
     color: "lightgray",
-  },
-  resetButton: {
-    alignSelf: "flex-end",
-    backgroundColor: "#968ec0",
-    borderRadius: 15,
-    position: "absolute",
-    right: -25,
   },
   foodItemContainer: {
     width: "100%",
@@ -161,7 +150,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-
   previewImage: {
     width: 250,
     height: 250,

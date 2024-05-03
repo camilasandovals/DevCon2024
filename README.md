@@ -6,7 +6,7 @@ To run the app, follow these steps:
 2. Add the following packages to your `package.json` file:
 
 ```json
-"expo-camera": "~14.1.2",
+"expo-camera": "~14.1.3",
 "expo-file-system": "~16.0.9"
 ```
 
@@ -101,6 +101,7 @@ You will be provided with an image and your goal is to identify what food it is 
 The price shouldn't be the most updated, just give an estimate from stores like Walmart, Publix, Whole Foods, etc.
 Return the food and the price in the format of a string separated with an equal sign, like this: Oldfashioned Oatmeal=3.99
 If it's not food or you can't identify the price just return 'unknown' for both price and food.
+If there are 2 or more food items in the image, return only one of them.
 """
 ```
 
