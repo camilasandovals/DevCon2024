@@ -1,6 +1,6 @@
 # CartApp 🛒
 
-Go to this URL: [https://snack.expo.dev/@camilasandovals/cartapp](https://snack.expo.dev/@camilasandovals/cartapp){:target="_blank"}
+Go to this URL: <a href="https://snack.expo.dev/@camilasandovals/cartapp" target="_blank">https://snack.expo.dev/@camilasandovals/cartapp</a>
 
 ## API Setup
 
