@@ -1,6 +1,6 @@
 # CartApp 🛒
 
-Go to this URL: <a href="https://snack.expo.dev/@camilasandovals/cartapp" target="_blank">https://snack.expo.dev/@camilasandovals/cartapp</a>
+Go to this URL: [snack.expo.dev/@camilasandovals/cartapp](https://snack.expo.dev/@camilasandovals/cartapp)
 
 ## API Setup
 
@@ -8,10 +8,10 @@ The CartApp utilizes FastAPI and OpenAI's GPT-4 Turbo model.
 
 Here's how to set up the API:
 
-1. Go to [https://platform.openai.com/](https://platform.openai.com/){:target="_blank"} and login or create an account
+1. Go to [platform.openai.com/](https://platform.openai.com/) and login or create an account
 2. Inside of settings, add the billing information
 3. Create an API key
-4. Go to [https://replit.com/](https://replit.com/){:target="_blank"} and create a Replit account
+4. Go to [replit.com/](https://replit.com/) and create a Replit account
 5. Click on the `+ Create Repl` button to create a new Repl
 6. Select the `FastAPI` template
 7. Install the required packages using the following commands:
@@ -94,4 +94,4 @@ If there are 2 or more food items in the image, return only one of them.
 
 ### Documentation:
 
-[https://platform.openai.com/docs/guides/vision](https://platform.openai.com/docs/guides/vision){:target="_blank"}
+[platform.openai.com/docs/guides/vision](https://platform.openai.com/docs/guides/vision)
