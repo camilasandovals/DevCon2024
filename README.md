@@ -27,17 +27,8 @@ Here's how to set up the API:
 4. Go to `https://replit.com/` and create a replit account
 5. Click on the `+ Create Repl` button to create a new repl
 6. Select the `FastAPI` template
-7. Install the required packages
 
-pip install the following packages:
-
-```bash
-pip install openai
-pip install python-multipart
-```
-
-### Create a FastAPI Server
-Create a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
+Copy this code in the editor, it creates a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
 
 ```python
 
@@ -55,7 +46,8 @@ def read_root():
 @app.post("/")
 async def get_openai_response_post(image: UploadFile = File(...)):
   try:
-    base64_image = await convert_image_to_base64(image) # convert image to base64
+    image_content = await image.read()
+    base64_image = base64.b64encode(image_content).decode('utf-8') # convert image to base64
 
     # send the image to OpenAI's GPT-4 Turbo model
     response = client.chat.completions.create(
@@ -87,12 +79,6 @@ async def get_openai_response_post(image: UploadFile = File(...)):
   except Exception as e:
     print(f"Error: {e}")
     raise HTTPException(status_code=500, detail=str(e))
-
-
-async def convert_image_to_base64(image: UploadFile):
-  """Base64 is a method used to encode data, such as images or text files, into a string of characters that can be easily transmitted over the internet or stored in a text-based format."""
-  image_content = await image.read()
-  return base64.b64encode(image_content).decode('utf-8')
 
 
 system_prompt = """
