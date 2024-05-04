@@ -60,9 +60,11 @@ async def get_openai_response_post(image: UploadFile = File(...)):
         top_p=0.1) #uses common and fitting words instead of rare or strange ones so it makes the response more predictable
 
     # extract the food and price from the response
-    food, price = response.choices[0].message.content.split('=')
+    
+    # food, price = response.choices[0].message.content.split('=')
+    # return {"food": food, "price": price}
 
-    return {"food": food, "price": price}
+    return response.choices[0].message.content
 
   except Exception as e:
     print(f"Error: {e}")
@@ -82,3 +84,7 @@ If there are 2 or more food items in the image, return only one of them.
 ### Documentation:
 
 https://platform.openai.com/docs/guides/vision
+
+
+
+https://3b070e55-f8bf-4fc6-ab9d-733751789bff-00-26riaorrzpbhs.picard.replit.dev/
