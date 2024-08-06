@@ -29,7 +29,7 @@ client = OpenAI(api_key="REPLACE WITH YOUR API KEY")
 
 @app.get("/")
 def read_root():
-    return {"Let's save some money yesssss!"}
+    return "Let's save some money !!"
 
 @app.post("/")
 async def get_openai_response_post(image: UploadFile = File(...)):
@@ -57,15 +57,18 @@ async def get_openai_response_post(image: UploadFile = File(...)):
                     },
                 ],
             }],
-            max_tokens=15,  # limits how long the response can be
+            response_format={"type": "json_object"},
+            max_tokens=25,  # limits how long the response can be
             top_p=0.1,
-            temperature=0
+            temperature=0  #less creative
         )  #uses common and fitting words instead of rare or strange ones so it makes the response more predictable
 
         # extract the food and price from the response
-
-        food, price = response.choices[0].message.content.split('=')
-        return {"food": food, "price": price}
+        response = response.choices[0].message.content
+        print(response)
+        if response is None:
+            return None
+        return json.loads(response)
 
     except Exception as e:
         print(f"Error: {e}")
@@ -74,9 +77,8 @@ async def get_openai_response_post(image: UploadFile = File(...)):
 
 system_prompt = """
 You are an agent specialized in tagging images of food and proving its possible price.
-You will be provided with an image and your goal is to identify what food it is and it's estimated price.
 The price shouldn't be the most updated, just give an estimate from stores like Walmart, Publix, Whole Foods, etc.
-Return the food and the price in the format of a string separated with an equal sign, like this: Oldfashioned Oatmeal=3.99
+Return in json format: {food: "Oldfashioned Oatmeal", price=3.99}
 If it's not food or you can't identify the price just return 'unknown' for both price and food.
 If there are 2 or more food items in the image, return only one of them.
 """
@@ -86,7 +88,3 @@ If there are 2 or more food items in the image, return only one of them.
 ### Documentation:
 
 https://platform.openai.com/docs/guides/vision
-
-
-
-https://3b070e55-f8bf-4fc6-ab9d-733751789bff-00-26riaorrzpbhs.picard.replit.dev/
