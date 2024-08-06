@@ -39,7 +39,7 @@ async def get_openai_response_post(image: UploadFile = File(...)):
 
     # send the image to OpenAI's GPT-4 Turbo model
     response = client.chat.completions.create(
-        model="gpt-4-turbo",
+        model="gpt-4o",
         messages=[{
             "role":
             "user",
@@ -57,7 +57,8 @@ async def get_openai_response_post(image: UploadFile = File(...)):
             ],
         }],
         max_tokens=15, # limits how long the response can be
-        top_p=0.1) #uses common and fitting words instead of rare or strange ones so it makes the response more predictable
+        top_p=0.1, #uses common and fitting words instead of rare or strange ones so it makes the response more predictable
+        temperature=0.0) #controls randomness of the response
 
     # extract the food and price from the response
     

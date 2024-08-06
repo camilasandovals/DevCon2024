@@ -15,7 +15,8 @@
     "expo-file-system": "^16.0.9",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
-    "react-native": "0.73.6"
+    "react-native": "0.73.6",
+    "expo-camera/legacy": "~15.0.14"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
