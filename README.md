@@ -15,8 +15,14 @@ Here's how to set up the API:
 4. Go to [replit.com/](https://replit.com/) and create a Replit account
 5. Click on the `+ Create Repl` button to create a new Repl
 6. Select the `FastAPI` template
+7. Install the dependencies by running the following commands in the shell:
 
-7. Copy this code in the editor, it creates a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
+```shell
+pip install python-multipart
+pip install openai
+```
+
+8. Copy this code in the editor, it creates a FastAPI server with a POST endpoint that accepts an image file and returns the food item and its estimated price.
 
 ```python
 
