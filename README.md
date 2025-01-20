@@ -1,5 +1,7 @@
 # CartApp 🛒
 
+AI Mobile App created with React Native and FastAPI, implements ChatGPT to identify what is in the picture taken, and provides the average price of the food item.
+
 ## React Native Base Code
 Go to this URL: [snack.expo.dev/@camilasandovals/cartapp](https://snack.expo.dev/@camilasandovals/cartapp)
 
